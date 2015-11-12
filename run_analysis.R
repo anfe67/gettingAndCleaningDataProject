@@ -22,7 +22,7 @@ unzip("./projectData/projectData.zip", exdir="./projectData")
 list.files("./projectData")
 
 # I move to the decompressed data dir to have an easier life with paths
-setwd("UCI HAR Dataset")
+setwd("./projectData/UCI HAR Dataset")
 
 # Read the test and training data 
 testData <-read.csv("test/X_test.txt", sep="", header = FALSE)
@@ -94,11 +94,12 @@ colnames(analysedData)[1] <- "subject"
 colnames(analysedData)[2] <- "ActivityName"
 
 # For good measure, I save this one to a file... 
+write.table(file="analysedData.txt", x=analysedData, row.names = FALSE)
 write.csv(file="analysedData.csv", x=analysedData)
 
 # I also save the clean dataset to a file... 
+write.table(file="fullDataWithMeanStdWithActNames.txt", x=fullDataWithMeanStdWithActNames, row.names = FALSE)
 write.csv(file="fullDataWithMeanStdWithActNames.csv", x=fullDataWithMeanStdWithActNames)
-
 
 
 

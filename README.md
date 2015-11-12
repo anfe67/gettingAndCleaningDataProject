@@ -9,8 +9,10 @@ My submission contains the following files:
 * README.md - This file
 * CodeBook.md - The description of the data and 
 * run_analysis.R -  The scripts that performs all the requested data cleaning operations and also the requested analysis. Every single line of the script is commented, and every operation is reproducible. There are no difficult steps, it is just a plain sequence of R commands
-* analysedData.csv - The result of the analysis saved back to CSV format
-* fullDataWithMeanStdWithActNames.csv - The intermediate product saved back to CSV format
+* analysedData.txt - The result of the analysis saved to TXT format
+* analysedData.csv - The result of the analysis saved to CSV format (which I prefer)
+* fullDataWithMeanStdWithActNames.txt - The intermediate product saved to TXT format
+* fullDataWithMeanStdWithActNames.csv - The intermediate product saved to CSV format
 
 ### Options 
 

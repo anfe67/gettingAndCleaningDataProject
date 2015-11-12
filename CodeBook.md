@@ -2,7 +2,8 @@
 
 # Obtaining the Data 
 
-The script downloads the original dataset (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and places it in a directory named projectData under the current working directory. It then uses thee unzip function to unpack the file.   
+The script downloads the original dataset (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and places it with the name projectData.zip in a directory named projectData under the current working directory. It then uses thee unzip function to unpack the file. If the file is already present then it should be overwritten. I know we should assume that the file is already in the directory but I find this to be more complete as we have seen in the beginning of the course how to do it.  
+
 The script contains commented instructions to start in a predefined directory. 
 
 # Verification of the data and assumptions 
@@ -26,6 +27,11 @@ Furthermore, I use the two files
 * feature_info.txt 
 
 To give column names and meaningful activity names to the dataset. In this process, I have verified that the train and test sets have the same number of rows. I have also assumed that rbind() of two dataframes appends the first dataframe to the second (order of rows is preserved). 
+
+# Note
+
+I have not used Data Tables, just Data Frames, as the datasets are small enough. 
+
 
 # Product of the script 
 
@@ -96,8 +102,10 @@ I rename my group columns
 * colnames(analysedData)[1] <- "subject"
 * colnames(analysedData)[2] <- "ActivityName"
 
-And I save my two resulting files for further analysis. 
+And I save my two resulting files in TXT and CSV for further analysis. 
+* write.table(file="analysedData.txt", x=analysedData, row.names = FALSE)
 * write.csv(file="analysedData.csv", x=analysedData)
+* write.table(file="fullDataWithMeanStdWithActNames.txt", x=fullDataWithMeanStdWithActNames, row.names = FALSE)
 * write.csv(file="fullDataWithMeanStdWithActNames.csv", x=fullDataWithMeanStdWithActNames)
 
 
