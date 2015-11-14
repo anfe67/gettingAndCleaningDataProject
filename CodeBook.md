@@ -2,8 +2,7 @@
 
 # Obtaining the Data 
 
-The script downloads the original dataset (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and places it with the name projectData.zip in a directory named projectData under the current working directory. It then uses thee unzip function to unpack the file. If the file is already present then it should be overwritten. I know we should assume that the file is already in the directory but I find this to be more complete as we have seen in the beginning of the course how to do it.  
-
+The script downloads the original dataset (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and places it with the name projectData.zip in a directory named projectData under the current working directory. It then uses thee unzip function to unpack the file. If the file is already present then it should be overwritten. I know we should assume that the file is already in the directory but I find this to be more complete and we have seen in the beginning of the course how to do it.  
 The script contains commented instructions to start in a predefined directory. 
 
 # Verification of the data and assumptions 
@@ -35,15 +34,85 @@ I have not used Data Tables, just Data Frames, as the datasets are small enough.
 
 # Product of the script 
 
-The script produces two csv files
-* fullDataWithMeanStdWithActNames.csv  (Contains all the Mean and Std deviations with column names and meaningful activity names)
-* analysedData.csv                     (Contains the mean values of the observations, grouped by subject and activity)
+The script produces two csv files and two txt files: 
 
-I have used the relevant column names contained in feature_info.txt (66 columns out of 561, those containing mean() and std()), all numeric, and I have added: 
+* fullDataWithMeanStdWithActNames.csv  (Contains all the Mean and Std deviations with column names and meaningful activity names)
+* fullDataWithMeanStdWithActNames.txt  (Is equivalent, space separated and contains all the Mean and Std deviations with column names and meaningful activity names)
+* analysedData.csv                     (Contains the mean values of the observations, grouped by subject and activity)
+* analysedData.txt                     (Is equivalent, space separated and contains the mean values of the observations, grouped by subject and activity)
+
+I have used the relevant column names contained in feature_info.txt (66 columns out of 561, those containing mean() and std()), all numeric. In analysedData.csv (.txt)
+these fields contain the mean values of the observations grouped by subject and activity. As we have 30 subjects and 6 activities we expect to see 180 rows in the data, 
+and this is the case. 
+
+The other two files (fullDataWithMeanStdWithActNames.csv and .txt) contain the original observation data but only for the columns containing mean() and std() in their names. 
+
+To make the data more usable and to respect the project requirements I have added: 
 
 * subject          : integer 
 * activity         : integer 
-* ActivityName     : Factor w/ 6 levels "LAYING","SITTING"... as in activity_labels.txt 
+* ActivityName     : Factor w/ 6 levels "LAYING","SITTING"... as obtained from activity_labels.txt 
+
+The numeric columns, with the original names are: 
+
+* tBodyAcc-mean()-X
+* tBodyAcc-mean()-Y
+* tBodyAcc-mean()-Z
+* tBodyAcc-std()-X
+* tBodyAcc-std()-Y
+* tBodyAcc-std()-Z
+* tGravityAcc-mean()-X
+* tGravityAcc-mean()-Y
+* tGravityAcc-mean()-Z
+* tGravityAcc-std()-X
+* tGravityAcc-std()-Y
+* tGravityAcc-std()-Z
+* tBodyAccJerk-mean()-X
+* tBodyAccJerk-mean()-Y
+* tBodyAccJerk-mean()-Z
+* tBodyAccJerk-std()-X
+* tBodyAccJerk-std()-Y
+* tBodyAccJerk-std()-Z
+* tBodyGyro-mean()-X
+* tBodyGyro-mean()-Y
+* tBodyGyro-mean()-Z
+* tBodyGyro-std()-X
+* tBodyGyro-std()-Y
+* tBodyGyro-std()-Z
+* tBodyGyroJerk-mean()-X
+* tBodyGyroJerk-mean()-Y
+* tBodyGyroJerk-mean()-Z
+* tBodyGyroJerk-std()-X
+* tBodyGyroJerk-std()-Y
+* tBodyGyroJerk-std()-Z
+* tBodyAccMag-mean()
+* tBodyAccMag-std()
+* tGravityAccMag-mean()
+* tGravityAccMag-std()
+* tBodyAccJerkMag-mean()
+* tBodyAccJerkMag-std()
+* tBodyGyroMag-mean()
+* tBodyGyroMag-std()
+* tBodyGyroJerkMag-mean()
+* tBodyGyroJerkMag-std()
+* fBodyAcc-mean()-X
+* fBodyAcc-mean()-Y
+* fBodyAcc-mean()-Z
+* fBodyAcc-std()-X
+* fBodyAcc-std()-Y
+* fBodyAcc-std()-Z
+* fBodyAccJerk-mean()-X
+* fBodyAccJerk-mean()-Y
+* fBodyAccJerk-mean()-Z
+* fBodyAccJerk-std()-X
+* fBodyAccJerk-std()-Y
+* fBodyAccJerk-std()-Z
+* fBodyGyro-mean()-X
+* fBodyGyro-mean()-Y
+* fBodyGyro-mean()-Z
+* fBodyGyro-std()-X
+* fBodyGyro-std()-Y
+* fBodyGyro-std()-Z
 
 # Verification of the script
 
